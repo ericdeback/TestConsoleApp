@@ -30,8 +30,16 @@ steps:
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-- task: DotNetCoreCLI@2
+    configuration: '$(buildConfiguration)'- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'- task: DotNetCoreCLI@2
   inputs:
     command: 'test'
     projects: 'ConsoleApp.csproj'
