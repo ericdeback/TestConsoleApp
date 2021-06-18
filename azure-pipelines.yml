@@ -36,4 +36,6 @@ steps:
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: '**/TEST-*.xml'
+    searchFolder: '$(Agent.TempDirectory)\TestResults'
+    failTaskOnFailedTests: true
     testRunTitle: 'My test results'
