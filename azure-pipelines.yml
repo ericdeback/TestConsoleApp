@@ -31,7 +31,12 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
- 
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'ConsoleApp.csproj'
+    arguments: '-l:trx;LogFileName=TestOutput.xml'
 
 - task: PublishTestResults@2
   inputs:
