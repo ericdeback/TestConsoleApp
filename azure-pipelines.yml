@@ -36,7 +36,6 @@ steps:
   inputs:
     command: 'test'
     projects: 'ConsoleApp.csproj'
-    arguments: '-l:trx;LogFileName=TestOutput.xml'
 
 - task: PublishTestResults@2
   inputs:
