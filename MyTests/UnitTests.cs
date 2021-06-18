@@ -20,7 +20,7 @@ namespace ConsoleApp
         public void Test1()
         {
             pg.doSomething();
-            Assert.Pass();
+            Assert.Fail();
         }
 
     }
