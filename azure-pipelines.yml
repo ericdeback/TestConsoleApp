@@ -28,10 +28,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
  
-- task: VisualStudioTestPlatformInstaller@1
-  inputs:
-    packageFeedSelector: 'nugetOrg'
-    versionSelector: 'latestPreRelease'
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
@@ -40,7 +36,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
-    testResultsFiles: '**/*.html'
+    testResultsFiles: '*'
     searchFolder: '$(Agent.TempDirectory)\TestResults'
     failTaskOnFailedTests: true
     testRunTitle: 'My test results'
