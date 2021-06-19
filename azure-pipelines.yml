@@ -40,7 +40,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
-    testResultsFiles: '**/TEST-*.xml'
+    testResultsFiles: '**/TEST-*.html'
     searchFolder: '$(Agent.TempDirectory)\TestResults'
     failTaskOnFailedTests: true
     testRunTitle: 'My test results'
